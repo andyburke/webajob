@@ -1,0 +1,3 @@
+<?cs template:"templates/header.cst" ?>
+Error?
+<?cs template:"templates/footer.cst" ?>

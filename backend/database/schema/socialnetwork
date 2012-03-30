@@ -1,0 +1,44 @@
+create table relationship (
+  id				varchar			PRIMARY KEY,
+  source			varchar			NOT NULL,
+  destination			varchar			NOT NULL,
+  type				int			NOT NULL,
+  start_date			timestamp		NOT NULL,
+  end_date			timestamp
+);
+
+create table relationship_type (
+  id				int			PRIMARY KEY,
+  name				varchar		NOT NULL
+);
+
+create table allowed_relationship_map (
+  sourcetype			varchar		NOT NULL,
+  targettype			varchar		NOT NULL,
+  relationshiptypeid		int		NOT NULL,
+  foreign key (relationshiptypeid) references relationship_type (id),
+  primary key (sourcetype, targettype, relationshiptypeid)
+);
+
+insert into relationship_type values(1, 'personal.friend');
+insert into relationship_type values(2, 'personal.sibling');
+insert into relationship_type values(3, 'personal.parent');
+insert into relationship_type values(4, 'personal.child');
+
+insert into relationship_type values(5, 'business.employee');
+insert into relationship_type values(6, 'business.employer');
+insert into relationship_type values(7, 'business.coworker');
+insert into relationship_type values(8, 'business.manager');
+insert into relationship_type values(9, 'business.colleague');
+
+insert into allowed_relationship_map values('user', 'user', 1);
+insert into allowed_relationship_map values('user', 'user', 2);
+insert into allowed_relationship_map values('user', 'user', 3);
+insert into allowed_relationship_map values('user', 'user', 4);
+insert into allowed_relationship_map values('user', 'user', 7);
+insert into allowed_relationship_map values('user', 'user', 8);
+insert into allowed_relationship_map values('user', 'user', 9);
+
+insert into allowed_relationship_map values('user', 'company', 5);
+
+insert into allowed_relationship_map values('company', 'user', 6);

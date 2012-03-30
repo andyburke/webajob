@@ -1,0 +1,105 @@
+# all passwords will be set to 'test'
+
+[people]
+# email|firstname|middlename|lastname|address1|address2|city|state|zipcode|country|phone|birthdate|webpage|im|summary
+aburke@bitflood.org|Andrew||Burke|10 University Rd Apt 1||Brookline|MA|02445|US|5855037988|09/04/1978|http://www.andrewburke.org/|giantgearz|hi!
+jmuhlich@bitflood.org|Jeremy||Muhlich|10 University Rd Apt 1||Brookline|MA|02445|US|8575443126|06/14/1979|http://www.petsquid.com/|plastik909|I am the german!
+mk@fdntech.com|Dana||Reid-Vanas|10 University Rd Apt 1||Brookline|MA|02445|US|5855768072|05/03/1979|http://www.fdntech.com/~mk|drvdana|I wish I owned a pony.
+luke@petre.net|Luke||Petre|Somewhere||Los Angeles|CA|90210|US|7819293086|03/03/1979|http://luke.petre.net|lwpetre|I make the tools!
+mcburton@gmail.com|Matt||Burton|10 University Rd Apt 1||Brookline|MA|02445|US|8608346138|01/01/1980|http://www.fdntech.com/~mcburton|alfuknused|I wear pants!
+
+# turbine people
+jefferyanderson@turbine-games.com|Jeff||Anderson|Someplace||Boston|MA|02222|US|7814074000|02/03/1960|http://www.turbine-games.com|jeffdude|I run turbine.
+rayyu@turbine-games.com|Ray||Yu|Someplace||Norwood|MA|02221|US|7814074001|03/04/1975|http://www.rayyu.com/~ray|rayman|I manage appdev at turbine.
+chrisd@turbine-games.com|Chris||Dyl|Someplace||Westwood|MA|02223|US|7814074002|01/02/1972|http://www.turbine-games.com/~chrisd|chrisd|I am the CTO of turbine.
+
+# MIT people
+susan@mit.edu|Susan||Hockfield|Somewhere||Cambridge|MA|02449|US|1234567890|01/01/1955|http://www.mit.edu/president||I am the president of MIT.
+
+# MITRE people
+martin@mitre.org|Martin||Fega|Somewhere||Boston|MA|02221|US|1234567890|01/01/1952|http://www.mitre.org||I run mitre.
+
+# Insomniac people
+tedprice@insomniac.com|Ted||Price|Someplace||Burbank|CA|91504|US|1234567890|01/01/1970|http://www.insomniacgames.com/~ceo|tedprice|I am the CEO of Insomniac.
+
+[companies]
+# manager(email)|name|address1|address2|city|state|zipcode|country|phone|webpage|summary
+aburke@bitflood.org|Graph Research, Inc.|10 University Rd Apt 1||Brookline|MA|02445|US||http://www.graphresearch.com|Graph Research
+jefferyanderson@turbine-games.com|Turbine, Inc.|60 Glacier Dr||Westwood|MA|02090|US||http://www.turbine-games.com|Turbine makes games
+tedprice@insomniac.com|Insomniac Games, Inc.|2255 North Ontario Street, Suite 550||Burbank|CA|91504|US||http://www.insomniacgames.com|Insomniac makes good games
+susan@mit.edu|MIT|1 Mass Ave.||Cambridge|MA|02449|US||http://www.mit.edu|MIT makes scientists.
+martin@mitre.org|MITRE Corporation|202 Burlington Rd||Bedford|MA|02225|US|http://www.mitre.org|GOVERNMENTS!!
+
+[relationships]
+# source|target|type|bidectional(0|1)
+
+#friendships
+aburke@bitflood.org|jmuhlich@bitflood.org|personal.friend|1
+aburke@bitflood.org|mk@fdntech.com|personal.friend|1
+jmuhlich@bitflood.org|mk@fdntech.com|personal.friend|1
+aburke@bitflood.org|chrisd@turbine-games.com|personal.friend|1
+aburke@bitflood.org|mcburton@gmail.com|personal.friend|1
+jmuhlich@bitflood.org|mcburton@gmail.com|personal.friend|1
+mk@fdntech.com|mcburton@gmail.com|personal.friend|1
+chrisd@turbine-games.com|jefferyanderson@turbine-games.com|personal.friend|1
+luke@petre.net|aburke@bitflood.org|personal.friend|1
+luke@petre.net|jmuhlich@bitflood.org|personal.friend|1
+
+#managers
+rayyu@turbine-games.com|aburke@bitflood.org|business.manager
+chrisd@turbine-games.com|mk@fdntech.com|business.manager
+jefferyanderson@turbine-games.com|chrisd@turbine-games.com|business.manager
+
+#employee relationships
+#aburke@bitflood.org|Graph Research, Inc.|employee  ... don't need this now that company managers are automatically set as employees
+aburke@bitflood.org|Turbine, Inc.|business.employee
+mk@fdntech.com|Turbine, Inc.|business.employee
+luke@petre.net|Insomniac Games, Inc.|business.employee
+jmuhlich@bitflood.org|MIT|business.employee
+mcburton@gmail.com|MITRE Corporation|business.employee
+rayyu@turbine-games.com|Turbine, Inc.|business.employee
+chrisd@turbine-games.com|Turbine, Inc.|business.employee
+
+#employer relationships
+# note that company managers implicity get an employer relationship from their company
+Turbine, Inc.|aburke@bitflood.org|business.employer
+Turbine, Inc.|mk@fdntech.com|business.employer
+Insomniac Games, Inc.|luke@petre.net|business.employer
+MIT|jmuhlich@bitflood.org|business.employer
+MITRE Corporation|mcburton@gmail.com|business.employer
+
+[jobs]
+#company|title|location|skillset|education|description
+
+# graph research jobs
+Graph Research, Inc.|Web Designer|Boston, MA|Make this website look less shitty.
+Graph Research, Inc.|Sales Manager|Boston, MA|Sell stuff to our customers.
+Graph Research, Inc.|CFO|Boston, MA|Manage our lack of money.
+
+# turbine jobs
+Turbine, Inc.|Release Engineering Lead|Westwood, MA|Manage all aspects of release engineering.  Report to CTO.
+Turbine, Inc.|Senior Engineer|Westwood, MA|Senior Application Development Engineer
+
+# MIT jobs
+MIT|Bioinformaticist|Cambridge, MA|Make proteins live inside the computer.
+
+# MITRE jobs
+MITRE Corporation|Evil Scientist|Bedford, MA|Create evil inventions.  Cackle.
+
+# Insomniac jobs
+Insomniac Games, Inc.|Junior Developer|Burbank, CA|Work on the tools.
+
+[resumes]
+# owner|resume name|description
+
+aburke@bitflood.org|Developer Resume|To obtain a job as a developer
+aburke@bitflood.org|Lead Resume|To obtain a job as a technical lead
+
+jmuhlich@bitflood.org|Bioinformatics Resume|To obtain a job with lifeforms
+
+mk@fdntech.com|Perl Resume|To obtain a job writing perl
+
+luke@petre.net|Lead Programmer|To obtain a job leading programmers around
+
+mcburton@gmail.com|Systems Resume|To obtain a job working on systems
+

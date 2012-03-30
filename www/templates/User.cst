@@ -1,0 +1,60 @@
+<?cs include:"templates/header.cst" ?>
+
+<?cs if:relationships.0.typenames.0 ?>
+ <div id="window">
+    <?cs include:"templates/friend_list.cst" ?>
+  </div>
+<?cs /if ?>
+  
+<div>
+<span style="font-size: x-large"><?cs var:user.firstname ?> <?cs var:user.middlename ?> <?cs var:user.lastname ?></span>
+</div>
+
+<?cs if:user.photoinfo.exists ?>
+<div style="float: right">
+  <img src="index.pl?webui_view=UserPhoto&user_id=<?cs var:user.id ?>"
+    width="<?cs var:user.photoinfo.width ?>"
+    height="<?cs var:user.photoinfo.height ?>" />
+</div>
+<?cs /if ?>
+
+<div>
+Location: <?cs var:user.city ?>, <?cs var:user.state ?>
+</div>
+
+<?cs if:user.webpage ?>
+<div>
+Webpage: <a href="<?cs var:user.webpage ?>"><?cs var:user.webpage ?></a>
+</div>
+<?cs /if ?>
+
+<?cs if:user.summary ?>
+<div>
+About: <?cs var:user.summary ?>
+</div>
+<?cs /if ?>
+
+<p>
+<?cs if:currentRelationshipId ?>
+
+  <a href="index.pl?webui_view=ConfirmEndRelationship&user_id=<?cs var:user.id ?>&relationship_id=<?cs var:currentRelationshipId ?>">Click here to end your relationship with <?cs var:user.firstname ?> <?cs var:user.lastname ?>.</a>
+
+<?cs else ?>
+
+  <?cs if:relationshiptypes.0.id ?>
+    <form action="index.pl">
+	  <input type="hidden" name="webui_view" value="BeginRelationship">
+	  <input type="hidden" name="user_id" value="<?cs var:user.id ?>">
+	  Add <?cs var:user.firstname ?> <?cs var:user.lastname ?> as your
+	  <select name="type_id">
+	    <?cs each: relationshiptype = relationshiptypes ?>
+	      <option value="<?cs var:relationshiptype.id ?>"><?cs var:relationshiptype.name ?></option>
+	    <?cs /each ?>
+	  </select>
+	  <input type="submit" value="Go">
+	</form>
+  <?cs /if ?>
+<?cs /if ?>
+</p>
+
+<?cs include:"templates/footer.cst" ?>

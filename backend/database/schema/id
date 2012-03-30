@@ -1,0 +1,22 @@
+create table id_type_map (
+  id				varchar			PRIMARY KEY,
+  typeid			int			NOT NULL,
+  FOREIGN KEY (typeid) REFERENCES typelist(id)
+); 
+
+create table typelist (
+  id				int			PRIMARY KEY,
+  name				varchar		NOT NULL
+);
+
+insert into typelist values(0, 'unknown');
+insert into typelist values(1, 'user');
+insert into typelist values(2, 'company');
+insert into typelist values(3, 'resume');
+insert into typelist values(4, 'job');
+insert into typelist values(5, 'relationship');
+insert into typelist values(6, 'jobApplication');
+
+-- superuser
+insert into id_type_map values ('63EE5C90-4734-11DA-A62D-F099B7EBB437', 1);
+

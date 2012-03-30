@@ -1,0 +1,10 @@
+<?cs include:"templates/header.cst" ?>
+
+  <p>
+  You have successfully created a new company!
+  
+  <p>
+  <a href="index.pl?webui_view=ViewCompany&company_id=<?cs var:company.id ?>">Click here</a> to view.
+ 
+
+<?cs include:"templates/footer.cst" ?>

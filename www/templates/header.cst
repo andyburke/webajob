@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Webajob - Where your friends work for you.</title>
+  </head>
+
+  <link rel="stylesheet" href="/webajob.css" type="text/css" />
+
+  <body>
+
+  <div id="banner">
+  Webajob!
+  </div>
+
+  <?cs include:"templates/show_message_string.cst" ?>
+
+  <div id="menu">
+    <?cs include:"templates/menu.cst" ?>
+  </div>
+
+  <div id="centercontent">
+    <?cs include:"templates/show_error_string.cst" ?>
+    

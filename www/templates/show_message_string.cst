@@ -1,0 +1,9 @@
+<?cs if:message ?>
+
+  <div id="messageBox">
+    <span>
+	  <?cs var:message ?>
+    </span>
+  </div>
+  
+<?cs /if ?>

@@ -1,0 +1,43 @@
+<?cs include:"templates/header.cst" ?>
+
+<div>
+<span style="font-size: x-large">Company Info</span>
+</div>
+
+<hr>
+
+<div>
+<span style="font-size: x-large"><?cs var:company.name ?></span>
+</div>
+
+<table>
+  <tr>
+    <td><span style="font-size: large">Location:</span></td>
+    <td><?cs var:company.city ?>, <?cs var:company.state ?></td>
+  </tr>
+  <tr>
+    <td><span style="font-size: large">Website:</span></td>
+    <td><a href="<?cs var:company.webpage ?>"><?cs var:company.webpage ?></a></td>
+  </tr>
+  <tr>
+    <td><span style="font-size: large">About:</span></td>
+    <td><?cs var:company.summary ?></a></td>
+  </tr>
+</table>
+
+<?cs if:company.jobs.0.id ?>
+<p>
+  <span style="font-size: x-large">Jobs</span>
+  <hr>
+  <div style="padding-left: 2em">
+    <table>
+    <?cs each:job = company.jobs ?>
+      <tr>
+        <td><a href="index.pl?webui_view=ViewJob&job_id=<?cs var:job.id ?>"><?cs var:job.title ?></a> (<?cs var:job.location ?>)</td>
+      </tr>
+    <?cs /each ?>
+    </table>
+  </div>
+<?cs /if ?>
+
+<?cs include:"templates/footer.cst" ?>

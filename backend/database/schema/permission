@@ -1,0 +1,14 @@
+create table permission (
+  sourceid		varchar,
+  targetid		varchar,
+  typeid		int,
+  expiration_time	int,
+  PRIMARY KEY(sourceid, targetid, typeid)
+);
+
+create table permission_type (
+  id		int			PRIMARY KEY,
+  name		varchar 		UNIQUE NOT NULL
+);
+
+insert into permission_type(id, name) values(1, "ManageCompany");

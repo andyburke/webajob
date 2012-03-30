@@ -1,0 +1,43 @@
+create table account (
+  owner_id	varchar		PRIMARY KEY,
+  balance	int		NOT NULL
+);
+
+create table transaction_log (
+  id		varchar		PRIMARY KEY,
+  owner_id	varchar		NOT NULL,
+  type_id	varchar		NOT NULL,
+  amount	int		NOT NULL,
+  entry_time	timestamp	NOT NULL,
+  notes		varchar
+);
+
+create table transaction_type (
+  id		varchar		PRIMARY KEY,
+  name		varchar		UNIQUE NOT NULL
+);
+
+create table purchase_rate (
+  user_class	varchar		NOT NULL,
+  dollars_in	int		NOT NULL,
+  credits_out	int		NOT NULL,
+  PRIMARY KEY (user_class, dollars_in, credits_out)
+);
+
+create table price_list (
+  product    varchar  NOT NULL,
+  price      int      NOT NULL,
+  PRIMARY KEY (product, price)
+);
+
+-- temporary values for now
+insert into purchase_rate values ('user', 10, 10);
+insert into purchase_rate values ('user', 20, 25);
+insert into purchase_rate values ('user', 40, 55);
+insert into purchase_rate values ('company', 100, 100);
+insert into purchase_rate values ('company', 180, 200);
+insert into purchase_rate values ('company', 400, 500);
+insert into purchase_rate values ('company', 750, 1000);
+
+insert into price_list values ('ApplyForJob', 1);
+insert into price_list values ('ListJob', '200');

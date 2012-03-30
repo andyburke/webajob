@@ -1,0 +1,43 @@
+<?cs include:"templates/header.cst" ?>
+
+<font size="+1">
+Creating a job listing costs <?cs var:price ?> credits.
+<p>
+<?cs var:company.name ?> has <?cs var:company.credits ?> credits.
+</font>
+<p>
+
+<?cs if:price > company.credits ?>
+<font size="+1" color="red">
+You do not have enough credits to add a job listing!
+</font>
+
+<?cs else ?>
+<form action="index.pl" method="POST">
+<table>
+  <tr>
+    <td>Job Title:</td>
+    <td><input name="title"></td>
+  </tr>
+  <tr>
+    <td>Job Location:</td>
+    <td><input name="location"></td>
+  </tr>
+  <tr>
+    <td>Job Description:</td>
+    <td><textarea cols="80" rows="10" name="description"></textarea></td>
+  </tr>
+</table>
+
+<font size="+1">
+Clicking 'Create' will deduct <?cs var:price ?> credits from your company account!
+</font>
+<p>
+  <input type="hidden" name="webui_view" value="DoAddJob">
+  <input type="hidden" name="company_id" value="<?cs var:company.id ?>">
+  <input type="submit" name="doAddJob" value="Create">
+  <input type="submit" name="doAddJob" value="Cancel">
+</form>
+<?cs /if ?>
+
+<?cs include:"templates/footer.cst" ?>

@@ -1,0 +1,6 @@
+create table resume (
+  id					varchar			PRIMARY KEY,
+  ownerid				varchar			NOT NULL,
+  name					varchar		NOT NULL,
+  description			varchar		NOT NULL
+);

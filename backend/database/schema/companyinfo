@@ -1,0 +1,13 @@
+create table company (
+  id			varchar			PRIMARY KEY,
+  name			varchar		UNIQUE NOT NULL,
+  address1		varchar		NOT NULL,
+  address2		varchar,
+  city			varchar		NOT NULL,
+  state			varchar		NOT NULL,
+  zipcode		int			NOT NULL,
+  country		varchar		NOT NULL,
+  phone			varchar		NOT NULL,
+  webpage		varchar,
+  summary		varchar
+);

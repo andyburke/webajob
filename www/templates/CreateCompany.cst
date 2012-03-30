@@ -1,0 +1,34 @@
+<?cs include:"templates/header.cst" ?>
+
+Create a new company.
+<p>
+Starred fields are required.
+
+<p>
+<form action="index.pl" method="POST">
+
+  Company Name:* <input name="name">
+  <br>
+  Address 1:* <input name="address1">
+  <br>
+  Address 2: <input name="address2">
+  <br>
+  City:* <input name="city">
+  <br>
+  State:* <input name="state">
+  <br>
+  Zipcode:* <input name="zipcode">
+  <br>
+  Country:* <input name="country">
+  <br>
+  Phone Number: <input name="phone">
+  <br>
+  Webpage: <input name="webpage">
+  <br>
+  Summary: <textarea cols="40" rows="10" name="summary"></textarea>
+  <br>
+  <input type="submit" value="Create Company">
+  <input type="hidden" name="webui_view" value="DoCreateCompany">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

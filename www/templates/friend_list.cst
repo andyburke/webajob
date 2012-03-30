@@ -1,0 +1,19 @@
+<span style="font-size: x-large">Relationships</span>
+<p>
+<table class="friendtable">
+<?cs each:relationship = relationships ?>
+  <tr>
+    <td>
+      <a href="index.pl?webui_view=User&user_id=<?cs var:relationship.id ?>">
+        <?cs var:relationship.firstname ?> <?cs var:relationship.lastname ?>
+      </a>
+      (
+      <?cs each:typename = relationship.typenames ?>
+        <?cs var:typename ?>
+      <?cs /each ?>
+      )
+    </td>
+  </tr>
+<?cs /each ?>
+</table>
+</p>

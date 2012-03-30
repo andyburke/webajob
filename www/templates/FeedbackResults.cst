@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+Thank you for your feedback, we really do love hearing from you!
+  
+<?cs include:"templates/footer.cst" ?>

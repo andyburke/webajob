@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+You have ended your relationship with <a href="index.pl?webui_view=User&user_id=<?cs var:otheruser.id ?>"><?cs var:otheruser.firstname ?> <?cs var:otheruser.lastname ?></a>.
+
+<?cs include:"templates/footer.cst" ?>

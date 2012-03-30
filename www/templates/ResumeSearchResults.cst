@@ -1,0 +1,23 @@
+<?cs include:"templates/header.cst" ?>
+
+<?cs if resumes.0.id ?>
+
+<table class="resumetable">
+<?cs each:resume = resumes ?>
+  <tr>
+    <td><a href="index.pl?webui_view=ViewResume&resume_id=<?cs var:resume.id ?>">
+      <?cs var:resume.name ?> 
+    </a><br>
+    Resume: <?cs var:resume.description ?>
+    </td>
+  </tr>
+<?cs /each ?>
+</table>
+
+<?cs else ?>
+
+  No results found!
+
+<?cs /if ?>
+
+<?cs include:"templates/footer.cst" ?>

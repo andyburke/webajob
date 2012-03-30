@@ -1,0 +1,17 @@
+create table log_entry (
+	id			varchar 		PRIMARY KEY,
+	channelid	int,
+	levelid		int,
+	time		timestamp 	NOT NULL,
+	entry		varchar
+);
+
+create table log_channel (
+	id			integer			PRIMARY KEY,
+	name		varchar 	NOT NULL
+);
+
+create table log_level (
+	id			integer			PRIMARY KEY	,
+	name		varchar 	NOT NULL
+);

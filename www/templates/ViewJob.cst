@@ -1,0 +1,77 @@
+<?cs include:"templates/header.cst" ?>
+
+<span style="font-size: x-large;"><?cs var:job.title ?></span>
+
+<table>
+  <tr>
+    <td><span style="font-size: large">Location:</td>
+    <td><?cs var:job.location ?></td>
+  </tr>
+  <tr>
+    <td><span style="font-size: large">Job Description:</td>
+    <td><?cs var:job.description ?></td>
+  </tr>
+</table>
+
+<form action="index.pl" method="POST">
+
+<?cs if:canManageCompany ?>
+
+  <table border="1">
+    <tr>
+      <th>Applicant Name</th>
+      <th>Application Date</th>
+      <th>Resume Link</th>
+      <th>Ratings</th>
+    </tr>
+    
+  <?cs each:jobApplication = jobApplications ?>
+    <tr>
+      <td><a href="index.pl?webui_view=User&user_id=<?cs var:jobApplication.applicant.id ?>"><?cs var:jobApplication.applicant.firstname ?> <?cs var:jobApplication.applicant.lastname ?></a></td>
+      <td><?cs var:jobApplication.date ?></td>
+      <td><a href="index.pl?webui_view=ViewResume&resume_id=<?cs var:jobApplication.resume_id ?>">Resume</a></td>
+      <td>
+        <?cs each:rating = jobApplication.ratings ?>
+          <?cs if:rating.rating == 1 ?>
+            <img src="/images/thumbsup.jpg">
+          <?cs elif:rating.rating == 0 ?>
+            <img src="/images/unknown.jpg">
+          <?cs elif:rating.rating == -1 ?>
+            <img src="/images/thumbsdown.jpg">
+          <?cs /if ?>
+        <?cs /each ?>
+      </td>
+    </tr>
+  <?cs /each ?>
+
+  </table>
+      
+<?cs else ?>
+
+  <?cs if:hasResume ?>
+    <table>
+      <tr>
+        <td>Select a resume to apply with:</td>
+          <td>
+          <select name="resumeid">
+          <?cs each:resume = resumes ?>
+            <option value="<?cs var:resume.id ?>"><?cs var:resume.name ?></option>
+          <?cs /each ?>
+          </select>
+        </td>
+        <td><input type="submit" value="Apply Now" /></td>
+      </tr>
+    </table>
+
+  <?cs else ?>
+    You have not yet created a resume.  You will need to create one to apply for this job.<p>
+    <a href="index.pl?webui_view=AddResume">Create a resume.</a>
+  <?cs /if ?>
+
+<?cs /if ?>
+
+<input type="hidden" name="webui_view" value="ConfirmApplyForJob" />
+<input type="hidden" name="job_id" value="<?cs var:job.id ?>" />
+</form>
+
+<?cs include:"templates/footer.cst" ?>

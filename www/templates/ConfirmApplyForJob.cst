@@ -1,0 +1,16 @@
+<?cs include:"templates/header.cst" ?>
+
+Are you sure you would like to apply for the position '<?cs var:job.title ?>' at <?cs var:company.name ?> with the resume '<?cs var:resume.name ?>'?
+<p>
+This will cost you <?cs var:price ?> credit(s).
+
+<form action="index.pl" method="POST">
+  <input type="hidden" name="webui_view" value="DoApplyForJob">
+  <input type="hidden" name="resume_id" value="<?cs var:resume.id ?>">
+  <input type="hidden" name="job_id" value="<?cs var:job.id ?>">
+  <input type="hidden" name="company_id" value="<?cs var:company.id ?>">
+  <input type="submit" name="doApplication" value="Apply">
+  <input type="submit" name="doApplication" value="Cancel">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

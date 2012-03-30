@@ -1,0 +1,6 @@
+<?cs include:"templates/header.cst" ?>
+
+  <p>
+  You have successfully added credits!
+ 
+<?cs include:"templates/footer.cst" ?>

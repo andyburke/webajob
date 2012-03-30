@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+You edited your resume, check it out on your <a href="index.pl?webui_view=ResumeManager">Resume Manager</a>.
+
+<?cs include:"templates/footer.cst" ?>

@@ -1,0 +1,13 @@
+<?cs include:"templates/header.cst" ?>
+
+Enter some search terms...
+
+<form action="index.pl">
+First Name: <input name="firstname" />
+Last Name: <input name="lastname" />
+Email: <input name="email" />
+<input type="hidden" name="webui_view" value="FriendSearchResults" />
+<input type="submit" value="Find" />
+</form>
+
+<?cs include:"templates/footer.cst" ?>

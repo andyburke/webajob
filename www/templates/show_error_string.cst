@@ -1,0 +1,9 @@
+<?cs if error.string ?>
+
+
+  <span style="color: red">
+    <span style="font-size: x-large">Error:</span>
+    <pre><?cs var:error.string ?></pre>
+  </span>
+
+<?cs /if ?>

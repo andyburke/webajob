@@ -1,0 +1,11 @@
+<?cs include:"templates/header.cst" ?>
+
+<h1><?cs var:userinfo.firstname ?> <?cs var:userinfo.lastname ?></h1>
+
+<p>
+<b>Location:</b> <?cs var:userinfo.city ?>, <?cs var:userinfo.state ?>
+
+<p>
+<b>Resume:</b> <?cs var:resume.description ?>
+
+<?cs include:"templates/footer.cst" ?>

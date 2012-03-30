@@ -1,0 +1,21 @@
+<?cs include:"templates/header.cst" ?>
+
+<?cs if friends.0.id ?>
+
+<table class="friendtable">
+<?cs each:friend = friends ?>
+  <tr>
+    <td><a href="index.pl?webui_view=User&user_id=<?cs var:friend.id ?>">
+      <?cs var:friend.firstname ?> <?cs var:friend.lastname ?> (<?cs var:friend.city ?>, <?cs var:friend.state ?>)
+    </a></td>
+  </tr>
+<?cs /each ?>
+</table>
+
+<?cs else ?>
+
+  No results found!
+
+<?cs /if ?>
+
+<?cs include:"templates/footer.cst" ?>

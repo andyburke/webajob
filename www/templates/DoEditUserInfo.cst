@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+You edited your user info, check it out on your <a href="index.pl?webui_view=MyPage">My Page</a>.
+
+<?cs include:"templates/footer.cst" ?>

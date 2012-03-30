@@ -1,0 +1,23 @@
+<?cs include:"templates/header.cst" ?>
+
+<table>
+  <tr>
+    <th>Resume Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <?cs each:resume = resumes ?>
+    <tr>
+      <td><a href="index.pl?webui_view=ViewResume&resume_id=<?cs var:resume.id ?>"><?cs var:resume.name ?></a></td>
+      <td><a href="index.pl?webui_view=EditResume&resume_id=<?cs var:resume.id ?>">[edit]</a></td>
+      <td><a href="index.pl?webui_view=ConfirmDeleteResume&resume_id=<?cs var:resume.id ?>">[delete]</a></td>
+    </tr>
+  <?cs /each ?>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><a href="index.pl?webui_view=AddResume">[add]</a></td>
+  </tr>
+</table>
+
+<?cs include:"templates/footer.cst" ?>

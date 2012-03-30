@@ -1,0 +1,54 @@
+<?cs include:"templates/header.cst" ?>
+
+Edit your company.
+
+<p>
+<form action="index.pl" method="POST">
+<table>
+  <tr>
+    <td>Company Name:</td>
+    <td><input name="name" value="<?cs var:company.name ?>"></td>
+  </tr>
+  <tr>
+    <td>Address 1:</td>
+    <td><input name="address1" value="<?cs var:company.address1 ?>"></td>
+  </tr>
+  <tr>
+    <td>Address 2:</td>
+    <td><input name="address2" value="<?cs var:company.address2 ?>"></td>
+  </tr>
+  <tr>
+    <td>City:</td>
+    <td><input name="city" value="<?cs var:company.city ?>"></td>
+  </tr>
+  <tr>
+    <td>State:</td>
+    <td><input name="state" value="<?cs var:company.state ?>"></td>
+  </tr>
+  <tr>
+    <td>Zipcode:</td>
+    <td><input name="zipcode" value="<?cs var:company.zipcode ?>"></td>
+  </tr>
+  <tr>
+    <td>Country:</td>
+    <td><input name="country" value="<?cs var:company.country ?>"></td>
+  </tr>
+  <tr>
+    <td>Phone Number:</td>
+    <td><input name="phone" value="<?cs var:company.phone ?>"></td>
+  </tr>
+  <tr>
+    <td>Website:</td>
+    <td><input name="webpage" value="<?cs var:company.webpage ?>"></td>
+  </tr>
+  <tr>
+    <td>Summary:</td>
+    <td><textarea name="summary" rows="10" cols="40"><?cs var:company.summary ?></textarea></td>
+  </tr>
+</table>
+  <input type="submit" value="Edit Company">
+  <input type="hidden" name="webui_view" value="DoEditCompany">
+  <input type="hidden" name="company_id" value="<?cs var:company.id ?>">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

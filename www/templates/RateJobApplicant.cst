@@ -1,0 +1,17 @@
+<?cs include:"templates/header.cst" ?>
+
+<?cs var:applicant.firstname ?> <?cs var:applicant.lastname ?> has applied for the position <?cs var:job.title ?> in <?cs var:job.location ?>.
+How qualified do you think <?cs var:applicant.firstname ?> is for this job?  Remember, <?cs var:applicant.firstname ?> will not know what rating
+you select, so try to be objective.
+
+<form action="index.pl" method="POST">
+  <input type="hidden" name="webui_view" value="DoRateJobApplicant" />
+  <input type="hidden" name="application_id" value="<?cs var:application.id ?>" />
+  <input type="radio" name="rating" value="1">Well qaulified</input>
+  <input type="radio" name="rating" value="0">Don't know</input>
+  <input type="radio" name="rating" value="-1">Not qualified</input>
+  <p>
+  <input type="submit" value="Rate">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

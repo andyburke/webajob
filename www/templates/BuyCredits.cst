@@ -1,0 +1,37 @@
+<?cs include:"templates/header.cst" ?>
+
+You can use credits to apply for jobs.
+<p>
+To buy credits, please select a package and a payment method.
+<p>
+You are now purchasing credits on a secure server. Your statement will appear as "You FUCKIING SUCK".
+<a href="index.pl?webui_view=SecurityPolicy">Click here</a> for more information about safe and secure
+shopping on our site. <a href="index.pl?webui_view=PrivacyPolicy">Click here</a> to read our Privacy Policy.
+
+<p>
+<form action="index.pl" method="POST">
+<table cellspacing="0" border="1" width="95%">
+  <tr>
+    <td>&nbsp;</td>
+    <td><font style="color:#cc0000;">Your Special Price!</font></td>
+    <td>Standard Price</td>
+  </tr>
+  <?cs each:rate = rates ?>
+    <tr>
+      <td width="4%">
+        <input value="<?cs var:rate.dollars_in ?>" name="amount" type="radio" />
+      </td>
+      <td width="48%">
+        Package FIXME - <?cs var:rate.credits_out ?> credits for $<?cs var:rate.dollars_in ?>
+      </td>
+      <td>
+        $<?cs var:rate.credits_out ?> (You save <font style="color:#cc0000">$<?cs var:rate.credits_out - rate.dollars_in ?></font>)
+      </td>
+    </tr>
+  <?cs /each ?>
+</table>
+  <input type="submit" value="Purchase">
+  <input type="hidden" name="webui_view" value="DoBuyCredits">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

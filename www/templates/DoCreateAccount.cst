@@ -1,0 +1,12 @@
+<?cs include:"templates/header.cst" ?>
+
+  <p>
+  Welcome to webajob!
+
+  <p>
+  You have successfully added an account!
+ 
+  <p>
+  <a href="index.pl?webui_view=Login">Log In</a> now!
+
+<?cs include:"templates/footer.cst" ?>

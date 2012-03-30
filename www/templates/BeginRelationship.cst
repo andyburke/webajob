@@ -1,0 +1,9 @@
+<?cs include:"templates/header.cst" ?>
+
+<?cs if addedRelationship ?>
+  You successfully added <a href="index.pl?webui_view=User&user_id=<?cs var:otheruser.id ?>"><?cs var:otheruser.firstname ?> <?cs var:otheruser.lastname ?></a> as your <?cs var:relationshipTypeName ?>.
+<?cs else ?>
+  Sorry, but there was a problem adding <a href="index.pl?webui_view=User&user_id=<?cs var:otheruser.id ?>"><?cs var:otheruser.firstname ?> <?cs var:otheruser.lastname ?></a> as a friend.
+<?cs /if ?>
+
+<?cs include:"templates/footer.cst" ?>

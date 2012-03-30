@@ -1,0 +1,22 @@
+<?cs include:"templates/header.cst" ?>
+
+Edit your resume.
+
+<p>
+<form action="index.pl" method="POST">
+<table>
+  <tr>
+    <td>Name for this resume:</td>
+    <td><input name="name" value="<?cs var:resume.name ?>"></td>
+  </tr>
+  <tr>
+    <td>Resume:</td>
+    <td><textarea cols="80" rows="40" name="description"><?cs var:resume.description ?></textarea></td>
+  </tr>
+</table>
+  <input type="submit" value="Edit Resume">
+  <input type="hidden" name="webui_view" value="DoEditResume">
+  <input type="hidden" name="resume_id" value="<?cs var:resume.id ?>">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

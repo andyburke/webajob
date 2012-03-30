@@ -1,0 +1,26 @@
+<?cs include:"templates/header.cst" ?>
+
+The following paths will rate your application.  If there is a particular path you would prefer was NOT notified of your application, please deselect it now:
+
+<form action="index.pl" method="POST">
+  <input type="hidden" name="webui_view" value="DoSelectPathsForApplication">
+  <input type="hidden" name="application_id" value="<?cs var:application.id ?>">
+  
+  <table>
+  <?cs each:path = paths ?>
+    <tr>
+      <td><input type="checkbox" name="path-<?cs var:path.pathname ?>" checked /></td>
+      <td>
+        <?cs each:user = path.users ?>
+          <?cs var:user.firstname ?> <?cs var:user.lastname ?> =>
+        <?cs /each ?>
+        <?cs var:job.title ?>
+      </td>
+    </tr>
+  <?cs /each ?>
+  </table>
+
+  <input type="submit" value="OK">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

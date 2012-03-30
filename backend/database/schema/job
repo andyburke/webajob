@@ -1,0 +1,23 @@
+create table job (
+  id					varchar			PRIMARY KEY,
+  ownerid				varchar			NOT NULL,
+  title					varchar		NOT NULL,
+  location				varchar		NOT NULL,
+  description			varchar		NOT NULL
+);
+
+create table application (
+  id					varchar			PRIMARY KEY,
+  applicant_id          		varchar		        NOT NULL,
+  job_id				varchar			NOT NULL,
+  resume_id				varchar			NOT NULL,
+  paths					varchar,
+  date					int			NOT NULL
+);
+
+create table rating (
+  application_id			varchar			PRIMARY KEY,
+  user_id				varchar			NOT NULL,
+  rating				int			NOT NULL,
+  date					int			NOT NULL
+);

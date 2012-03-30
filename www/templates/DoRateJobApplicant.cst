@@ -1,0 +1,9 @@
+<?cs include:"templates/header.cst" ?>
+
+<?cs if:ratedApplicant == 1 ?>
+  Thanks for taking the time to rate <?cs var:applicant.firstname ?>'s application for this position.
+<?cs else ?>
+  Sorry, there seems to have been a problem submitting this rating.
+<?cs /if ?>
+
+<?cs include:"templates/footer.cst" ?>

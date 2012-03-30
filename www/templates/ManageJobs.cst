@@ -1,0 +1,16 @@
+<?cs include:"templates/header.cst" ?>
+
+<div>
+  <span style="font-size: x-large"><?cs var:company.name ?></span>
+  <div style="padding-left: 2em">
+  <table>
+  <?cs each:job = company.jobs ?>
+    <tr>
+      <td><a href="index.pl?webui_view=ViewJob&job_id=<?cs var:job.id ?>"><?cs var:job.title ?></a> (<?cs var:job.location ?>)</td>
+    </tr>
+  <?cs /each ?>
+  </table>
+  </div>
+</div>
+
+<?cs include:"templates/footer.cst" ?>

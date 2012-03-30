@@ -1,0 +1,13 @@
+<?cs include:"templates/header.cst" ?>
+
+Are you sure you would like to end your relationship with <a href="index.pl?webui_view=User&user_id=<?cs var:otheruser.id ?>"><?cs var:otheruser.firstname ?> <?cs var:otheruser.lastname ?></a>?
+
+<form action="index.pl" method="POST">
+  <input type="hidden" name="webui_view" value="EndRelationship">
+  <input type="hidden" name="user_id" value="<?cs var:otheruser.id ?>">
+  <input type="hidden" name="relationship_id" value="<?cs var:currentRelationshipId ?>">
+  <input type="submit" value="Yes">
+  <input type="submit" value="No">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

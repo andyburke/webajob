@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+You added a job.
+
+<?cs include:"templates/footer.cst" ?>

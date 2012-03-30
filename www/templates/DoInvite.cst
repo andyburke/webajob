@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+Let's both hope that someone out there actually likes you.
+
+<?cs include:"templates/footer.cst" ?>

@@ -1,0 +1,129 @@
+	body {
+		margin:0px 0px 10px 0px;
+                font: 12px/1.2 Verdana, Arial, Helvetica, sans-serif;
+		color: black;
+		background: #E5CFFF;
+	}
+
+	a {
+		font-weight: bold;
+	}
+
+	form {
+		margin: 2px;
+	}
+
+	input,textarea,select {
+		color: #000000;
+		background-color: #DFE4FF;
+		font-family: verdana,arial,sans serif;
+		font-size: 10px;
+		border: 1px solid #888;
+		margin: 5px;
+	}
+
+    td {
+    	vertical-align: top;
+		border-bottom: 1px solid #ddd;
+    }
+
+	hr {
+		border: 0px;
+		height: 1px;
+		background-color: #fff;
+	}
+
+	a:link {
+		color: #24006B;
+		text-decoration: none;
+		border-bottom: 1px solid #24006B;
+	} 
+
+	a:visited {
+		color: #14005B;
+		border-bottom: dotted 1px #14005B;
+		text-decoration: none;
+	}
+ 
+	a:active {
+		color: #54309B;
+	}
+
+	a:hover {
+		color: #34107B;
+		border-bottom: dotted 1px #fff;
+	}
+
+        .thinborder {
+                border: 1px solid #eee;
+        }
+
+	#banner {
+		height:40px;
+		text-align: center;
+                font-family: verdana,arial,sans serif;
+                font-size: 30px;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		height:39px;
+		}
+	html>body #banner {
+		height:39px;
+		}
+
+	#centercontent {
+		margin-left: 199px;
+		margin-right:199px;
+		border:1px solid #eee;
+		padding: 3px;
+		height: 90%;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		margin-left: 201px;
+		margin-right:201px;
+	}
+
+	#messageBox {
+		margin-left: 199px;
+		margin-right:199px;
+		border:1px solid #eee;
+		padding: 3px;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		margin-left: 201px;
+		margin-right:201px;
+	}
+	#messageBox>span {
+		color: blue;
+		font-weight: bold;
+		font-size: larger;	
+	}
+	
+	html>body #centercontent {
+		margin-left: 201px;
+		margin-right:201px;
+	}
+
+        #menu {
+                border: 1px solid #eee;
+                position: absolute;
+                left: 10px;
+                top: 40px;
+                width: 180px;
+                height: 75%;
+                padding: 3px;
+		background: #CCA0FF;
+		margin:0px 0px 0px 0px;
+        }
+
+	#centercontent #window {
+		border: 1px solid #eee; 
+		float:right;
+		color: white;
+		width: 300px; 
+		height: 300px;
+		padding: 3px;
+		background: #6630CC;
+		margin:0px 0px 10px 10px;
+	}
+

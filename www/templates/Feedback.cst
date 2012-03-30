@@ -1,0 +1,20 @@
+<?cs include:"templates/header.cst" ?>
+
+We love hearing from you!
+
+<form action="index.pl">
+<table>
+ <tr>
+  <td>Subject:</td>
+  <td><input type="text" name="subject" value="" size="60" maxlength="60"></textarea></td>
+ </tr>
+ <tr>
+  <td>Body:</td>
+  <td><textarea name="body" rows="20" cols="60"></textarea></td>
+ </tr>
+</table>
+<input type="hidden" name="webui_view" value="FeedbackResults" />
+<input type="submit" value="Submit" />
+</form>
+  
+<?cs include:"templates/footer.cst" ?>

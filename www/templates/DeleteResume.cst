@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+Resume successfully deleted.
+
+<?cs include:"templates/footer.cst" ?>

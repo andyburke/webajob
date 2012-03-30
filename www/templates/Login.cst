@@ -1,0 +1,14 @@
+<?cs include:"templates/header.cst" ?>
+
+  <form action="index.pl" method="post">
+
+  Email:    <input name="email" />
+  Password: <input type="password" name="password" />
+
+  <input type="submit" value="Login" />
+
+  <input type="hidden" name="webui_view" value="DoLogin" />
+  <input type="hidden" name="webui_dest" value="<?cs var:webui_dest ?>" />
+  </form>
+
+<?cs include:"templates/footer.cst" ?>

@@ -1,0 +1,33 @@
+<?cs include:"templates/header.cst" ?>
+
+Enter up to five people to invite:
+
+<p>
+<form action="index.pl" method="POST">
+<table>
+  <tr>
+    <td>email:</td>
+    <td><input name="address"></td>
+  </tr>
+  <tr>
+    <td>email:</td>
+    <td><input name="address"></td>
+  </tr> 
+  <tr>
+    <td>email:</td>
+    <td><input name="address"></td>
+  </tr> 
+  <tr>
+    <td>email:</td>
+    <td><input name="address"></td>
+  </tr> 
+  <tr>
+    <td>email:</td>
+    <td><input name="address"></td>
+  </tr> 
+</table>
+  <input type="submit" value="Invite">
+  <input type="hidden" name="webui_view" value="DoInvite">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

@@ -1,0 +1,83 @@
+<?cs include:"templates/header.cst" ?>
+
+Edit your User Info.
+
+<p>
+<form action="index.pl" method="post" enctype="multipart/form-data">
+<table border="0">
+  <tr>
+    <td>Firstname:</td>
+    <td><input size="40" name="firstname" value="<?cs var:validuser.firstname ?>"></td>
+  </tr>
+  <tr>
+    <td>Middlename:</td>
+    <td><input size="40" name="middlename" value="<?cs var:validuser.middlename ?>"></td>
+  </tr>
+  <tr>
+    <td>Lastname:</td>
+    <td><input size="40" name="lastname" value="<?cs var:validuser.lastname ?>"></td>
+  </tr>
+  <tr>
+    <td>Address 1:</td>
+    <td><input size="40" name="address1" value="<?cs var:validuser.address1 ?>"></td>
+  </tr>
+  <tr>
+    <td>Address 2:</td>
+    <td><input size="40" name="address2" value="<?cs var:validuser.address2 ?>"></td>
+  </tr>
+  <tr>
+    <td>City:</td>
+    <td><input size="40" name="city" value="<?cs var:validuser.city ?>"></td>
+  </tr>
+  <tr>
+    <td>State:</td>
+    <td><input size="40" name="state" value="<?cs var:validuser.state ?>"></td>
+  </tr>
+  <tr>
+    <td>Zipcode:</td>
+    <td><input size="40" name="zipcode" value="<?cs var:validuser.zipcode ?>"></td>
+  </tr>
+  <tr>
+    <td>Country:</td>
+    <td><input size="40" name="country" value="<?cs var:validuser.country ?>"></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><input size="40" name="phone" value="<?cs var:validuser.phone ?>"></td>
+  </tr>
+  <tr>
+    <td>Birthdate:</td>
+    <td><input size="40" name="birthdate" value="<?cs var:validuser.birthdate ?>"></td>
+  </tr>
+  <tr>
+    <td>webpage:</td>
+    <td><input size="40" name="webpage" value="<?cs var:validuser.webpage ?>"></td>
+  </tr>
+  <tr>
+    <td>IM:</td>
+    <td><input size="40" name="im" value="<?cs var:validuser.im ?>"></td>
+  </tr>
+  <tr>
+    <td>Summary:</td>
+    <td><textarea cols="40" rows="10" name="summary"><?cs var:validuser.summary ?></textarea></td>
+  </tr>
+  <tr>
+    <td>Photo:</td>
+    <td>
+      <?cs if:validuser.photoinfo.exists ?>
+        <img src="index.pl?webui_view=UserPhoto&user_id=<?cs var:validuser.id ?>">
+        <br>
+        <label for="delete_photo">Check to delete this photo: </label>
+        <input type="checkbox" name="delete_photo" id="delete_photo" value="1">
+        <br>
+      <?cs /if ?>
+      <label for="photo"><?cs if:validuser.photoinfo.exists ?>Replace this<?cs else ?>Upload a<?cs /if ?> photo: </label>
+      <input name="photo" type="file" accept="image/jpg,image/png,image/gif">
+     </td>
+  </tr>
+</table>
+  <input type="submit" value="Edit User Info">
+  <input type="hidden" name="webui_view" value="DoEditUserInfo">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

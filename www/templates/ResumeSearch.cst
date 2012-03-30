@@ -1,0 +1,11 @@
+<?cs include:"templates/header.cst" ?>
+
+Enter some search terms...
+
+<form action="index.pl">
+Keyword: <input name="description" />
+<input type="hidden" name="webui_view" value="ResumeSearchResults" />
+<input type="submit" value="Find" />
+</form>
+
+<?cs include:"templates/footer.cst" ?>

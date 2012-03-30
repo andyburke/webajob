@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+Company successfully edited.
+
+<?cs include:"templates/footer.cst" ?>

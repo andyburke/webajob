@@ -1,0 +1,40 @@
+<?cs if validuser.id ?>
+  <ul>
+    <li><a href="index.pl?webui_view=MyPage">My Page</a>
+    <li><a href="index.pl?webui_view=JobSearch">Search for jobs</a>
+    <li><a href="index.pl?webui_view=FriendSearch">Search for friends</a>
+    <li><a href="index.pl?webui_view=ResumeManager">Resume Manager</a>
+    <li><a href="index.pl?webui_view=CreateCompany">Create a Company</a>
+    <li><a href="index.pl?webui_view=BuyCredits">Buy Credits</a>    
+    <li><a href="index.pl?webui_view=Invite">Invite other people</a>
+    <li><a href="index.pl?webui_view=Feedback">Feedback (bugs, etc.)</a>
+    <li><a href="index.pl?webui_view=Logout">Logout</a>
+  </ul>
+  <hr>
+<?cs else ?>
+  <form action="index.pl" method="post">
+  email:<br>
+  <input name="email" />
+  password:
+  <br>
+  <input type="password" name="password" />
+  <br>
+  <input type="submit" value="Login" />
+  <input type="hidden" name="webui_view" value="DoLogin" />
+  </form>
+
+  <br>
+  New here? <a href="index.pl?webui_view=CreateAccount">Sign up now!</a>
+  <br>
+  <a href="index.pl?webui_view=ForgotPassword">Forgot your password?</a>
+  <hr>
+<?cs /if ?>
+
+<?cs if validuser.is_admin ?>
+  <ul>
+    <li><a href="index.pl?webui_view=ManageUsers">Manage Users</a>
+    <li><a href="index.pl?webui_view=ManageCompanies">Manage Companies</a>
+    <li><a href="index.pl?webui_view=ViewStats">View Stats</a>
+  </ul> 
+  <hr>
+<?cs /if ?>

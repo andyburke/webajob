@@ -1,0 +1,25 @@
+create table user (
+  id		varchar		PRIMARY KEY,
+  email		varchar		UNIQUE NOT NULL,
+  firstname	varchar		NOT NULL,
+  middlename	varchar,
+  lastname	varchar		NOT NULL,
+  address1	varchar		NOT NULL,
+  address2	varchar,
+  city		varchar		NOT NULL,
+  state		varchar		NOT NULL,
+  zipcode	int		NOT NULL,
+  country	varchar		NOT NULL,
+  phone		varchar,
+  birthdate	datetime	NOT NULL,
+  webpage	varchar,
+  im		varchar,
+  summary	varchar
+);
+
+create table photo (
+  userid        varchar		PRIMARY KEY,
+  photodata     blob		NOT NULL
+);
+
+insert into user values('63EE5C90-4734-11DA-A62D-F099B7EBB437', 'webajob@webajob.com', 'Weba', NULL, 'Job', '10 University Rd Apt 1', NULL, 'Brookline', 'MA', 02445, 'US', NULL, '01/01/1962', NULL, NULL, 'Super user.');

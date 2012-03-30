@@ -1,0 +1,82 @@
+<?cs include:"templates/header.cst" ?>
+
+  <div id="window">
+    <?cs include:"templates/friend_list.cst" ?>
+  </div>
+
+  <p>
+  <span style="font-size: x-large">My Info</span>
+
+  <?cs if:validuser.photoinfo.exists ?>
+  <div style="float: right">
+     <img src="index.pl?webui_view=UserPhoto&user_id=<?cs var:validuser.id ?>"
+       width="<?cs var:validuser.photoinfo.width ?>"
+       height="<?cs var:validuser.photoinfo.height ?>" />
+  </div>
+  <?cs /if ?>
+  <p>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><span style="font-size: x-large"><?cs var:validuser.firstname ?> <?cs var:validuser.middlename ?> <?cs var:validuser.lastname ?></span></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><?cs var:validuser.email ?></td>
+    </tr>
+    <tr>
+      <td>Phone:</td>
+      <td><?cs var:validuser.phone ?></td>
+    </tr>
+    <tr>
+      <td>Location:</td>
+      <td>
+        <?cs var:validuser.address1 ?><br />
+        <?cs if:validuser.address2 ?><?cs var:validuser.address2 ?><br /><?cs /if ?>
+        <?cs var:validuser.city ?>, <?cs var:validuser.state ?> <?cs var:validuser.zipcode ?>, <?cs var:validuser.country ?>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="index.pl?webui_view=EditUserInfo">[edit User Info]</a></td>
+    </tr>
+    <tr>
+      <td>Credits:</td>
+      <td>
+	<?cs var:credits ?>
+      </td>
+    </tr>
+  </table>
+
+<?cs if:managedcompanies.0.id ?>
+<hr>
+<span style="font-size: x-large;">My Companies</span>
+
+<div style="padding-left: 2em;">
+  <?cs each:company = managedcompanies ?>
+    <table>
+    <tr>
+      <td><span style="font-size: large;"><a href="index.pl?webui_view=ViewCompany&company_id=<?cs var:company.id ?>"><?cs var:company.name ?></a></span></td>
+	</tr>
+	<tr>
+	  <td>
+	    Credits: <?cs var:company.credits ?>
+      </td>
+	</tr>
+	<tr>
+      <td>
+      <span style="font-size: small;">
+      [<a href="index.pl?webui_view=AddJob&company_id=<?cs var:company.id ?>">Add a new job</a>]
+      [<a href="index.pl?webui_view=ManageJobs&company_id=<?cs var:company.id ?>">Manage your jobs</a>]
+      [<a href="index.pl?webui_view=ResumeSearch&company_id=<?cs var:company.id ?>">Search for candidates</a>]
+      [<a href="index.pl?webui_view=EmployeeFinder&company_id=<?cs var:company.id ?>">Find your employees</a>]
+      [<a href="index.pl?webui_view=BuyCompanyCredits&company_id=<?cs var:company.id ?>">Buy company credits</a>]
+      </td>
+    </tr>
+  </table>
+  <hr>
+  <?cs /each ?>
+  
+</div>
+<?cs /if ?>
+  
+<?cs include:"templates/footer.cst" ?>

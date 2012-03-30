@@ -1,0 +1,3 @@
+<?cs include:"templates/header.cst" ?>
+
+<?cs include:"templates/footer.cst" ?>

@@ -1,0 +1,21 @@
+<?cs include:"templates/header.cst" ?>
+
+<?cs if jobs.0.id ?>
+
+<table class="jobtable">
+<?cs each:job = jobs ?>
+  <tr>
+    <td><a href="index.pl?webui_view=ViewJob&job_id=<?cs var:job.id ?>">
+      <?cs var:job.title ?> (<?cs var:job.location ?>)
+    </a></td>
+  </tr>
+<?cs /each ?>
+</table>
+
+<?cs else ?>
+
+  No results found!
+
+<?cs /if ?>
+
+<?cs include:"templates/footer.cst" ?>

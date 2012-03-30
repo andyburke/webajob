@@ -1,0 +1,87 @@
+<?cs include:"templates/header.cst" ?>
+
+Sign up for webajob!
+<p>
+Starred fields are required.
+
+<p>
+<form action="index.pl" method="POST">
+  <table>
+    <tr>
+      <td>Email Address:*</td>
+      <td><input name="email"></td>
+    </tr>
+    <tr>
+      <td>Verify Email Address:*</td> 
+      <td><input name="email_verify"></td>
+    </tr>
+    <tr>
+      <td>Password:*</td>
+      <td><input type="password" name="password"></td>
+    </tr>
+    <tr>
+      <td>Verify Password:*</td>
+      <td><input type="password" name="password_verify"></td>
+    </tr>
+    <tr>
+      <td>First Name:*</td>
+      <td><input name="firstname"></td>
+    </tr>
+    <tr>
+      <td>Middle Name:</td>
+      <td><input name="middlename"></td>
+    </tr>
+    <tr>
+      <td>Last Name:*</td>
+      <td><input name="lastname"></td>
+    </tr>
+    <tr>
+      <td>Address 1:*</td>
+      <td><input name="address1"></td>
+    </tr>
+    <tr>
+      <td>Address 2:</td>
+      <td><input name="address2"></td>
+    </tr>
+    <tr>
+      <td>City:*</td>
+      <td><input name="city"></td>
+    </tr>
+    <tr>
+      <td>State:*</td>
+      <td><input name="state"></td>
+    </tr>
+    <tr>
+      <td>Zipcode:*</td>
+      <td><input name="zipcode"></td>
+    </tr>
+    <tr>
+      <td>Country:*</td>
+      <td><input name="country"></td>
+    </tr>
+    <tr>
+      <td>Phone Number:</td>
+      <td><input name="phone"></td>
+    </tr>
+    <tr>
+      <td>Birthdate:*</td>
+      <td><input name="birthdate"></td>
+    </tr>
+    <tr>
+      <td>Webpage:</td>
+      <td><input name="webpage"></td>
+    </tr>
+    <tr>
+      <td>IM:</td>
+      <td><input name="im"></td>
+    </tr>
+    <tr>
+      <td>Summary:</td>
+      <td><textarea cols="40" rows="10" name="summary"></textarea></td>
+    </tr>
+  </table>
+  <input type="submit" value="Create Account">
+  <input type="hidden" name="webui_view" value="DoCreateAccount">
+</form>
+
+<?cs include:"templates/footer.cst" ?>

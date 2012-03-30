@@ -1,0 +1,5 @@
+<?cs include:"templates/header.cst" ?>
+
+You have applied for the position '<?cs var:job.title ?>' at <?cs var:company.name ?> with the resume '<?cs var:resume.name ?>'!!!
+
+<?cs include:"templates/footer.cst" ?>
